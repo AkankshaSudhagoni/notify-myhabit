@@ -15,6 +15,10 @@ To **execute** my project first you need to install [**Visual Studio Code**](htt
 ## App is still in under development
 We have only recently started our project, therefore we will need some time to update how we can **set up, deploy, and test** our project.
 
+[RFP](https://github.com/NaveenTanuku/HabitRemainder/blob/main/rfp.md) </br>
+[Proposal](https://github.com/RohitChandupatla/proposal-notify-myhabit/blob/main/Proposal.md)
+
+
 
 
 
