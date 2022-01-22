@@ -10,7 +10,7 @@ The objective of our web application is to display the habit of the student on b
 | [**Akanksha Sudhagoni**](https://github.com/AkankshaSudhagoni)   | Back-End-Developer        | S542046@nwmissouri.edu      |
 
 ## External Requirements
-To **execute** my project first you need to install [**Visual Studio Code**](https://code.visualstudio.com/) and then you need to install [**C#**](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) and [**MongoDB**](https://marketplace.visualstudio.com/items?itemName=mongodb.mongodb-vscode) extensions in order to get my app to run in your laptop. </br>
+To run my project on your laptop, first install Visual Studio, then ASP.NET and web development, selecting all checkboxes and installing. Finally, download the.NET 6.0 SDK and install it, as well as the Microsoft.AspNetCore.Http and MongoDB extensions.
 
 ## App is still in under development
 We have only recently started our project, therefore we will need some time to update how we can **set up, deploy, and test** our project.
