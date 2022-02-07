@@ -1,0 +1,118 @@
+﻿@page "/updatehabit"
+@model HabitApp.Pages.UpdateHabit_Model
+@{
+}
+
+<style>
+    .responsive {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+    }
+</style>
+
+<div class="container">
+    <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+    <div class="row">
+        <div class="col-md-7">
+
+            <img class="responsive" src="~/lib/Images/exercise.gif" />
+
+        </div>
+        <div class="col-6 col-md-5">
+            <h1 class="mb-3">Update Habit</h1>
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="mb-3">
+                    <label class="form-label"> Habit Title</label>
+                    <input type="text" class="form-control" required id="habitTitle" asp-for="UpdateHabitData.habitTitle" />
+
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"> Habit Description</label>
+                    <input type="text" class="form-control" required id="habitDescription" asp-for="UpdateHabitData.habitDescription" />
+
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"> Habit Image</label>
+                    <input type="file" class="form-control" onchange="encodeImageFileAsURL(this)" id="habitImage" />
+
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"> Video Url</label>
+                    <input type="text" class="form-control" required id="url" asp-for="UpdateHabitData.habitVideoUrl" />
+
+                </div>
+                <div class="mb-3">
+                    <label class="form-label"> Habit Audio</label>
+                    <input type="file" class="form-control" onchange="encodeImageAudioFileAsURL(this)" id="habitaudio" />
+
+                </div>
+                <input type="text" class="form-control" id="habitId" hidden asp-for="UpdateHabitData.habitId" />
+                <input type="text" class="form-control" id="imagetext" hidden asp-for="UpdateHabitData.habitImage" />
+                <input type="text" class="form-control" id="audiotext" hidden asp-for="UpdateHabitData.habitAudio" />
+                <input type="text" class="form-control" id="statustext" hidden asp-for="UpdateHabitData.habitStatus" />
+                <input type="text" class="form-control" id="pointstext" hidden asp-for="UpdateHabitData.habitPoints" />
+                <input type="text" class="form-control" id="userIdtext" hidden asp-for="UpdateHabitData.userId" />
+                <br /><br />
+                <div class="mb-3">
+
+                    <center>
+                        <button type="submit" class="btn btn-success">Update</button>
+                    </center>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var url_string = window.location.href
+    var url = new URL(url_string);
+
+    var idtext = url.searchParams.get("hid")
+    var titleText = url.searchParams.get("htitle")
+    var descriptiontext = url.searchParams.get("hdescription")
+    var statustext = url.searchParams.get("hstatus")
+    var pointtext = url.searchParams.get("hpoints")
+    var videourltext = url.searchParams.get("hvideo")
+    
+    document.getElementById("userIdtext").value = window.localStorage.getItem("id");
+    
+    document.getElementById("habitId").value = idtext;
+    document.getElementById("habitTitle").value = titleText;
+    document.getElementById("habitDescription").value = descriptiontext;
+    document.getElementById("url").value = videourltext;
+    document.getElementById("imagetext").value = window.localStorage.getItem("imagetext");;
+    document.getElementById("audiotext").value = window.localStorage.getItem("audio");
+    document.getElementById("statustext").value = descriptiontext;
+    document.getElementById("pointstext").value = videourltext;
+
+    function encodeImageFileAsURL(element) {
+        var file = element.files[0];
+        var reader = new FileReader();
+        reader.onloadend = function () {
+            document.getElementById("imagetext").value = reader.result;
+        }
+        reader.readAsDataURL(file);
+
+
+    }
+
+    function encodeImageAudioFileAsURL(element) {
+        var file = element.files[0];
+        var reader = new FileReader();
+        reader.onloadend = function () {
+            document.getElementById("audiotext").value = reader.result;
+        }
+        reader.readAsDataURL(file);
+
+
+    }
+
+
+
+</script>
