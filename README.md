@@ -1,6 +1,6 @@
 # Notify-MyHabit
 
-The objective of our web application is to display the habit of the student on basis of the weekday. Once the user hits on the habit, it shows some images, descriptions in the text, the user will get to see whether the habit is done today or not. If the user completes the habit for the day then we can add some points or credits to the account.
+The objective of our web application is to display the habit of the student on basis of the weekday. Once the user hits on the habit, it shows some images, descriptions in the text, the user will get to see whether the habit is done today or not. If the user completes the habit for the day then we can add some points or credits to their account.
 
 ## My Team 
 
