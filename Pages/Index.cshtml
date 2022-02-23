@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container mt-5 responsive" style="width:100%;height:auto; align-content:center">
+	<div class="card" style="width:50%;height:auto; margin-left:auto; margin-right:auto">
+      <img src="@Model.HabitModel.habitImage" class="card-img-top" alt="...">
+      <div class="card-body">
+          <h5 class="card-title">@Model.HabitModel.habitTitle</h5>
+          <p class="card-text">@Model.HabitModel.habitDescription</p>
+        <a href="#" class="btn btn-primary" style="margin-left:80px" onclick="viewPage()">See more</a>
+      </div>
+    </div>
+</div>
+
+<script>
+    
+    
+    function viewPage()
+    {
+        var email = window.localStorage.getItem("email")
+        if (email == null) {
+            window.location.href = "/login"
+        } else {
+            window.location.href = "/viewhabits"
+        }
+    }
+</script>
+

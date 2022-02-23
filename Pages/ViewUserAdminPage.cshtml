@@ -1,0 +1,35 @@
+﻿@page "/viewuseradminpage"
+@model HabitApp.Pages.ViewUserAdminPageModel
+@{
+}
+
+<div class="container">
+    <h2 style="align-content: center">Users</h2>
+    <table class="table table-primary table-striped table-borderless" style="margin-top: 3rem; border-radius:0.5rem">
+        <thead>
+            <tr>
+                <th scope="col">User Name</th>
+                <th scope="col">Email</th>
+                <th style="text-align:center; align-items:center" scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>jake paul</td>
+                <td>jake@gmail.com</td>
+                <td style="text-align:center">
+
+                    <button type="button"
+                            class="btn btn-danger delete"
+                            data-id=""
+                            data-controller="Habit"
+                            data-action="delete"
+                            data-body-message="Are you sure you need to Delete this Habit?">
+                        View
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
