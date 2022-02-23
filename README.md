@@ -1,5 +1,7 @@
 # Notify-MyHabit
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/587d5feaf1184cd2a82029895f7d6d2a)](https://www.codacy.com/gh/AkankshaSudhagoni/notify-myhabit/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AkankshaSudhagoni/notify-myhabit&amp;utm_campaign=Badge_Grade)
+
 The objective of our web application is to display the habit of the student on basis of the weekday. Once the user hits on the habit, it shows some images, descriptions in the text, the user will get to see whether the habit is done today or not. If the user completes the habit for the day then we can add some points or credits to their account.
 
 ## My Team 
