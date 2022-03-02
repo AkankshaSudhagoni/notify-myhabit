@@ -1,8 +1,6 @@
 # Notify-MyHabit
 
-
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/587d5feaf1184cd2a82029895f7d6d2a)](https://www.codacy.com/gh/AkankshaSudhagoni/notify-myhabit/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AkankshaSudhagoni/notify-myhabit&amp;utm_campaign=Badge_Grade)
-
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=AkankshaSudhagoni_notify-myhabit&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=AkankshaSudhagoni_notify-myhabit)
 
@@ -31,7 +29,7 @@ The objective of our web application is to display the habit of the student on b
 > - **https://api.nuget.org/v3/index.json is the source.** </br>
 > - **After that, click Update and then Ok. </br>**
 
-## Deploy
+## Deployment
 
 • When you make any **modifications** to the **repository**, the build will **begin to deploy automatically in heroku**. </br>
 • When ou make changes to a repo and there are **no changes** in Heroku, try **manually deploying** the changes to see if they are reflected in the application.
@@ -40,12 +38,12 @@ The objective of our web application is to display the habit of the student on b
 • We haven't tested our app yet, but it's something we're considering doing with [Nunit](https://nunit.org/). </br>
 
 ## Security analysis
-• **[sonarcloud](https://sonarcloud.io/summary/new_code?id=AkankshaSudhagoni_notify-myhabit)** </br>
-• **[codacy](https://app.codacy.com/gh/AkankshaSudhagoni/notify-myhabit/dashboard?branch=main)** </br>
+• **[Sonarcloud](https://sonarcloud.io/summary/new_code?id=AkankshaSudhagoni_notify-myhabit)** </br>
+• **[Codacy](https://app.codacy.com/gh/AkankshaSudhagoni/notify-myhabit/dashboard?branch=main)** </br>
 
 ## Documentation Sites
  
-• **[swagger](https://akankshasudhagoni.github.io/swagger-notifymyapp/)** </br>
+• **[Swagger](https://akankshasudhagoni.github.io/swagger-notifymyapp/)** </br>
 • **[HostedSite](https://rohitchandupatla.github.io/notify-myhabit-doc/)** </br>
 • **[Docfx](https://rohitchandupatla.github.io/notify-myhabit-docfx/)** </br>
 
