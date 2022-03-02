@@ -20,7 +20,7 @@ The objective of our web application is to display the habit of the student on b
 • The workload **ASP.NET and web development** must be installed using the **Visual Studio installer**. </br>
 • In the visual studio installer, you must install **.NET 5.0** from **individual components**
 
-## setup
+## Setup
 #### Following are the requirements to set up the virtual studio after cloning the my repository.
 
 • In Visual Studio, open the HabitApp.sln file.</br>
@@ -31,15 +31,15 @@ The objective of our web application is to display the habit of the student on b
 > - **https://api.nuget.org/v3/index.json is the source.** </br>
 > - **After that, click Update and then Ok. </br>**
 
-## deploy
+## Deploy
 
 • When you make any **modifications** to the **repository**, the build will **begin to deploy automatically in heroku**. </br>
 • When ou make changes to a repo and there are **no changes** in Heroku, try **manually deploying** the changes to see if they are reflected in the application.
 
-## test
+## Test
 • We haven't tested our app yet, but it's something we're considering doing with [Nunit](https://nunit.org/). </br>
 
-## security analysis
+## Security analysis
 • **[sonarcloud](https://sonarcloud.io/summary/new_code?id=AkankshaSudhagoni_notify-myhabit)** </br>
 • **[codacy](https://app.codacy.com/gh/AkankshaSudhagoni/notify-myhabit/dashboard?branch=main)** </br>
 
@@ -55,14 +55,3 @@ The objective of our web application is to display the habit of the student on b
 • [You can find our **Proposal** for Notify MyHabit here.](https://github.com/RohitChandupatla/proposal-notify-myhabit/blob/main/Proposal.md)</br>
 • [You can find our **Wiki** for Notify MyHabit here.](https://github.com/AkankshaSudhagoni/Notify-MyHabit/wiki)</br>
 • [You can find our **Project board** for Notify MyHabit here](https://github.com/AkankshaSudhagoni/Notify-MyHabit/projects/2)
-
-
-
-
-
-
-
-
-
-
-
