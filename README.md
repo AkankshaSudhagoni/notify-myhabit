@@ -23,13 +23,18 @@ The objective of our web application is to display the habit of the student on b
 ## setup
 #### Following are the requirements to set up the virtual studio after cloning the my repository.
 
+• In Visual Studio, open the HabitApp.sln file.</br>
+• Click on Tools > Options > NuGet Package Manager > Manage NuGet Package for solution. </br>
+• look for Microsoft.AspNetCore.Http and MongoDB install in solution's driver.</br>
+> - **If you're having trouble installing, go to the gear icon > Select the **+** symbol.** </br>
+> - **nuget.org is the name** </br>
+> - **https://api.nuget.org/v3/index.json is the source.** </br>
+> - **After that, click Update and then Ok. </br>**
+
+## deploy
 
 
-
-
-
-
-We have only recently started our project, therefore we will need some time to update how we can **set up, deploy, and test** our project.
+## test
 
 ## Links
 
