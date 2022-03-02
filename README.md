@@ -39,6 +39,11 @@ The objective of our web application is to display the habit of the student on b
 ## test
 • We haven't tested our app yet, but it's something we're considering doing with [Nunit](https://nunit.org/). </br>
 
+## security analysis
+• **[sonarcloud](https://sonarcloud.io/summary/new_code?id=AkankshaSudhagoni_notify-myhabit)** </br>
+• **[codacy](https://app.codacy.com/gh/AkankshaSudhagoni/notify-myhabit/dashboard?branch=main)** </br>
+
+
 ## Links
 
 • [You can find our **Request For Proposal** for Notify MyHabit here.](https://github.com/NaveenTanuku/HabitRemainder/blob/main/rfp.md) </br>
