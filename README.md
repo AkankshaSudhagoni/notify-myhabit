@@ -25,13 +25,17 @@ The objective of our web application is to display the habit of the student on b
 
 • In Visual Studio, open the HabitApp.sln file.</br>
 • Click on Tools > Options > NuGet Package Manager > Manage NuGet Package for solution. </br>
-• look for Microsoft.AspNetCore.Http and MongoDB install in solution's driver.</br>
+• look for **Microsoft.AspNetCore.Http** and **MongoDB.Driver** install in solution's driver.</br>
 > - **If you're having trouble installing, go to the gear icon > Select the **+** symbol.** </br>
 > - **nuget.org is the name** </br>
 > - **https://api.nuget.org/v3/index.json is the source.** </br>
 > - **After that, click Update and then Ok. </br>**
 
 ## deploy
+
+• When you make any **modifications** to the **repository**, the build will **begin to deploy automatically in heroku**. </br>
+• When ou make changes to a repo and there are **no changes** in Heroku, try **manually deploying** the changes to see if they are reflected in the application.
+
 
 
 ## test
