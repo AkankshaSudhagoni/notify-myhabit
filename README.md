@@ -43,8 +43,7 @@ The objective of our web application is to display the habit of the student on b
 
 ## Documentation Sites
  
-• **[Swagger](https://akankshasudhagoni.github.io/swagger-notifymyapp/)** </br>
-• **[HostedSite](https://rohitchandupatla.github.io/notify-myhabit-doc/)** </br>
+• **[Swagger](https://akankshasudhagoni.github.io/swagger-notifymyapp/)** </br>a
 • **[Docfx](https://rohitchandupatla.github.io/notify-myhabit-docfx/)** </br>
 • **[User/Contributor Guide](https://rohitchandupatla.github.io/notify-myhabit-doc/)** 
 
