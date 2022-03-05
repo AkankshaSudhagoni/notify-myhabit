@@ -43,11 +43,11 @@ The objective of our web application is to display the habit of the student on b
 
 ## Documentation Sites
  
-• **[Swagger](https://akankshasudhagoni.github.io/swagger-notifymyapp/)** </br>a
+• **[Swagger](https://akankshasudhagoni.github.io/swagger-notifymyapp/)** </br>
+• **[User/Contributor Guide](https://rohitchandupatla.github.io/notify-myhabit-doc/)** </br>
 • **[Docfx](https://rohitchandupatla.github.io/notify-myhabit-docfx/)** </br>
-• **[User/Contributor Guide](https://rohitchandupatla.github.io/notify-myhabit-doc/)** 
 
-## Links
+## Links 
 
 • [You can find our **Request For Proposal** for Notify MyHabit here.](https://github.com/NaveenTanuku/HabitRemainder/blob/main/rfp.md) </br>
 • [You can find our **Proposal** for Notify MyHabit here.](https://github.com/RohitChandupatla/proposal-notify-myhabit/blob/main/Proposal.md)</br>
