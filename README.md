@@ -53,3 +53,4 @@ The objective of our web application is to display the habit of the student on b
 • [You can find our **Proposal** for Notify MyHabit here.](https://github.com/RohitChandupatla/proposal-notify-myhabit/blob/main/Proposal.md)</br>
 • [You can find our **Wiki** for Notify MyHabit here.](https://github.com/AkankshaSudhagoni/Notify-MyHabit/wiki)</br>
 • [You can find our **Project board** for Notify MyHabit here](https://github.com/AkankshaSudhagoni/Notify-MyHabit/projects/2)
+• [You can find our **Client Feedback** for Notify MyHabit here]
