@@ -13,3 +13,5 @@ _site
 .vs/habitapp/v17/.suo
 *.sqlite
 *.sqlite
+.vs/habitapp/v17/.suo
+.vs/slnx.sqlite
