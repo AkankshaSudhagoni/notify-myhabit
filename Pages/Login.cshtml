@@ -2,6 +2,15 @@
 @model HabitApp.Pages.LoginModel
 @{
 }
+
+<html>
+<head>
+<title>Font Awesome Icons</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
 <style>
     .responsive {
         max-width: 100%;
@@ -12,7 +21,7 @@
   padding: 20px;
   background-color: #f44336;
   color: white;
-  opacity: 1;
+  opacity: ;
   transition: opacity 0.6s;
   margin-bottom: 15px;
 }
@@ -65,8 +74,9 @@
                     <input type="password" style="max-width:100%;height:auto;" class="form-control" required asp-for="LoginCredentials.Password" />
 
                 </div>
-
-                <p>We don't have <mark>Github</mark> authentication Please login with your email id.</p>
+<h6>
+                <i class="fa fa-github" style="font-size:26px"></i> Please <mark>scroll down</mark> to know more information </p> 
+</h6>
 
                 <div class="mb-3">
 
@@ -149,3 +159,6 @@
            }
         }
             </script>
+
+            </body>
+</html> 
