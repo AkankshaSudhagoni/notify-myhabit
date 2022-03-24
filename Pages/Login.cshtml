@@ -96,26 +96,10 @@
                     </center>
 
                 </div>
+                
 
 
-            <div class="alert warning">
-             <span class="closebtn">&times;</span>  
-             <strong>Warning!</strong> We've been trying to connect to GitHub for many days, and we've spent a lot of effort on authentication. We're having troubles and could do better with Github authentication and Unit testing. We've tried Auth0 and OAuth,but due to our.NET and C# stack, our application isn't working. I spoke with Abdul Suboor Syed, who completed hisauthentication via GitHub, and his project is.NET Core with enhanced C#, but we implemented.NET with #C in my application,and we have many complex login authentications because we had controllers connected to many models in this scenario,
-             and we were unable to authenticate GitHub.
-            </div>
-
-             <script>
-             var close = document.getElementsByClassName("closebtn");
-             var i;
-
-            for (i = 0; i < close.length; i++) {
-              close[i].onclick = function(){
-              var div = this.parentElement;
-              div.style.opacity = "0";
-              setTimeout(function(){ div.style.display = "none"; }, 600);
-           }
-        }
-            </script>
+            
 
             </form>
 
@@ -139,9 +123,29 @@
                         window.localStorage.setItem("id", "@ViewData["Id"]");
                     window.location.replace("/index");
                     </script>
+
                 }
             }
 
         </div>
     </div>
 </div>
+
+<div class="alert warning">
+             <span class="closebtn">&times;</span>  
+             <strong>Warning!</strong> We've been trying to connect to GitHub for many days, and we've spent a lot of effort on authentication. We're having troubles and could do better with Github authentication and Unit testing. We've tried Auth0 and OAuth,but due to our.NET and C# stack, our application isn't working. I spoke with Abdul Suboor Syed, who completed hisauthentication via GitHub, and his project is.NET Core with enhanced C#, but we implemented.NET with #C in my application,and we have many complex login authentications because we had controllers connected to many models in this scenario,
+             and we were unable to authenticate GitHub.
+            </div>
+
+             <script>
+             var close = document.getElementsByClassName("closebtn");
+             var i;
+
+            for (i = 0; i < close.length; i++) {
+              close[i].onclick = function(){
+              var div = this.parentElement;
+              div.style.opacity = "0";
+              setTimeout(function(){ div.style.display = "none"; }, 600);
+           }
+        }
+            </script>
