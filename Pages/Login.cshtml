@@ -8,6 +8,33 @@
         width: auto;
         height: auto;
     }
+    .alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+}
+
+.alert.success {background-color: #04AA6D;}
+.alert.info {background-color: #2196F3;}
+.alert.warning {background-color: #ff9800;}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
 </style>
 
 <div class="container">
@@ -69,6 +96,31 @@
                     </center>
 
                 </div>
+
+                <h2>Alert Messages</h2>
+
+
+                <p>Click on the "x" symbol to close the alert message.</p>
+
+
+            <div class="alert warning">
+             <span class="closebtn">&times;</span>  
+             <strong>Warning!</strong> We've been trying to connect to GitHub for many days, and we've spent a lot of effort on authentication. We're having troubles and could do better with Github authentication and Unit testing. We've tried Auth0 and OAuth,but due to our.NET and C# stack, our application isn't working. I spoke with Abdul Suboor Syed, who completed hisauthentication via GitHub, and his project is.NET Core with enhanced C#, but we implemented.NET with #C in my application,and we have many complex login authentications because we had controllers connected to many models in this scenario,
+             and we were unable to authenticate GitHub.
+            </div>
+
+             <script>
+             var close = document.getElementsByClassName("closebtn");
+             var i;
+
+            for (i = 0; i < close.length; i++) {
+              close[i].onclick = function(){
+              var div = this.parentElement;
+              div.style.opacity = "0";
+              setTimeout(function(){ div.style.display = "none"; }, 600);
+           }
+        }
+            </script>
 
             </form>
 
