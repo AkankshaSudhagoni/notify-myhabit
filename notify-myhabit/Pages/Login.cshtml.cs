@@ -2,10 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Auth0.AspNetCore.Authentication;
 using HabitApp.Models;
 using HabitApp.Services.Implementations;
 using HabitApp.Services.Interfaces;
 using HabitApp.Utils;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -18,13 +20,21 @@ namespace HabitApp.Pages
 
         public void OnGet()
         {
+         
+        }
 
+        public async Task Login()
+        {
+            var authenticationProperties = new LoginAuthenticationPropertiesBuilder()
+                .WithRedirectUri("/")
+                .Build();
+
+            await HttpContext.ChallengeAsync(Auth0Constants.AuthenticationScheme, authenticationProperties);
         }
 
         public IActionResult OnPost()
         {
             ILogin loginService = new LoginImpl();
-
             LoginDataModel loginData = new LoginDataModel();
 
             loginData.Email = LoginCredentials.Email;
@@ -40,7 +50,7 @@ namespace HabitApp.Pages
                 ViewData["Email"] = string.Format(loginData.Email);
                 String id = postLogin.UserId.ToString();
                 ViewData["Id"] = string.Format(id);
-                
+
 
             }
             else

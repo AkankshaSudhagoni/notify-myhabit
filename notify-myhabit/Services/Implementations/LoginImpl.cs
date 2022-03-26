@@ -5,11 +5,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Auth0.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
 
 namespace HabitApp.Services.Implementations
 {
     public class LoginImpl : ILogin
     {
+       
         public LoginSucessDTO login(LoginDataModel loginData)
         {
             string email = loginData.Email;
