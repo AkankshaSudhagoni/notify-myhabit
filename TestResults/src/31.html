@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Pages\AdminAllocatePoints.cshtml.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using HabitApp.Models;
+using HabitApp.Services.Implementations;
+using HabitApp.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using MongoDB.Bson;
+using System.Collections.Generic;
+
+namespace HabitApp.Pages
+{
+    public class AdminAllocatePointsModel : PageModel
+    {
+        [BindProperty]
+        public IEnumerable&lt;HabitModel&gt; HabitDataModels { get; set; }
+
+        [BindProperty]
+        public string UserId { get; set; }
+
+        [BindProperty]
+        public AllocatePointModel AllocatePointDataModel { get; set; }
+
+     
+        public void OnGet()
+        {
+            IViewHabit viewHabitService = new ViewHabitImpl();
+            HabitDataModels = viewHabitService.getHabitModels();
+            
+        }
+
+
+        public IActionResult OnPost()
+        {
+
+            IAllocatePoints addPointService = new AllocatePointsImpl();
+            HabitModel HabitData = new HabitModel();
+
+            //set input values to HabitDataModel
+            HabitData.habitPoints = AllocatePointDataModel.habitPoints;
+            HabitData.habitId = ObjectId.Parse(AllocatePointDataModel.habitId);
+
+
+            bool isSucess = addPointService.addPoints(HabitData);
+
+            if (isSucess)
+            {
+                ViewData[&quot;SucessStatus&quot;] = string.Format(&quot;200&quot;);
+                ViewData[&quot;SucessfulMessage&quot;] = string.Format(&quot;Points Updated Sucessfully!&quot;);
+                AllocatePointModel AllocatePointDataModel = new AllocatePointModel();
+                OnGet();
+
+            }
+            else
+            {
+                ViewData[&quot;SucessStatus&quot;] = string.Format(&quot;500&quot;);
+                ViewData[&quot;ErrorMessage&quot;] = string.Format(&quot;Cannot Update Points!&quot;);
+            }
+            return null;
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[14,58,14,62,0],[14,63,14,67,1],[17,32,17,36,0],[17,37,17,41,0],[20,60,20,64,0],[20,65,20,69,0],[24,9,24,10,1],[25,13,25,63,1],[26,13,26,65,1],[28,9,28,10,1],[32,9,32,10,0],[34,13,34,72,0],[35,13,35,53,0],[38,13,38,72,0],[39,13,39,80,0],[42,13,42,66,0],[44,13,44,26,0],[45,13,45,14,0],[46,17,46,65,0],[47,17,47,93,0],[48,17,48,86,0],[49,17,49,25,0],[51,13,51,14,0],[53,13,53,14,0],[54,17,54,65,0],[55,17,55,83,0],[56,13,56,14,0],[57,13,57,25,0],[58,9,58,10,0]]);
+    </script>
+  </body>
+</html>

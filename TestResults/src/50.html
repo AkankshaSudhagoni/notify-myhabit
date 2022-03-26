@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Services\Implementations\ResetPasswordImpl.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using HabitApp.DBHandler.Childerns;
+using HabitApp.Models;
+using HabitApp.Services.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace HabitApp.Services.Implementations
+{
+    public class ResetPasswordImpl : IResetPassword
+    {
+        public bool ResetPassword(ResetPasswordDataModel resetPassword)
+        {
+            ResetPasswordDataHandler dataHandler = new ResetPasswordDataHandler(&quot;forgotpassword&quot;);
+
+            String email = dataHandler.ResetPassword(resetPassword);
+
+            UserDataHandler userDataHandler = new UserDataHandler(&quot;habbitCollection&quot;);
+
+            bool status = userDataHandler.FindUserByEmailandUpdate(email, resetPassword.newPassword);
+
+            return status;
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[14,9,14,10,0],[15,13,15,99,0],[17,13,17,69,0],[19,13,19,87,0],[21,13,21,102,0],[23,13,23,27,0],[24,9,24,10,0]]);
+    </script>
+  </body>
+</html>

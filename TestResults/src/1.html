@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit.Test\UnitTest1.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using HabitApp.Pages;
+using Microsoft.Extensions.Logging;
+using System;
+using Xunit;
+
+namespace notify_myhabit.Test
+{
+    public class UnitTest1
+    {
+        Logger&lt;Index&gt; l ;
+        [Fact]
+        public void Test1()
+        {
+            LandingPageModel landingPageModel = new LandingPageModel();
+            landingPageModel.OnGet();
+            Assert.Equal(null, null);
+            
+        }
+        [Fact]
+        public void Test2()
+        {
+            AddHabitModel addHabitModel = new AddHabitModel();
+            addHabitModel.OnGet();
+            Assert.Equal(null, null);
+        }
+        [Fact]
+        public void Test3()
+        {
+            AdminAllocatePointsModel adminAllocatePointsModel = new AdminAllocatePointsModel();
+            adminAllocatePointsModel.OnGet();
+            Assert.Equal(null, null);
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[13,9,13,10,0],[14,13,14,72,0],[15,13,15,38,0],[16,13,16,38,0],[18,9,18,10,0],[21,9,21,10,1],[22,13,22,63,1],[23,13,23,35,1],[24,13,24,38,1],[25,9,25,10,1],[28,9,28,10,1],[29,13,29,96,1],[30,13,30,46,1],[31,13,31,38,1],[32,9,32,10,1]]);
+    </script>
+  </body>
+</html>

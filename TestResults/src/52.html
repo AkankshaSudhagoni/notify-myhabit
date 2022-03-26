@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Services\Implementations\UpdateHabitImpl.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using HabitApp.DBHandler.Childerns;
+using HabitApp.Models;
+using HabitApp.Services.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace HabitApp.Services.Implementations
+{
+    public class UpdateHabitImpl : IUpadeHabit
+    {
+        public bool updateHabit(HabitModel habit)
+        {
+            bool isHabitTitleValid = !String.IsNullOrEmpty(habit.habitTitle);
+            bool isHabitDescriptionValid = !String.IsNullOrEmpty(habit.habitDescription);
+            bool isHabitImageValid = !String.IsNullOrEmpty(habit.habitImage);
+            bool isSucess = false;
+
+            if (isHabitTitleValid &amp;&amp; isHabitDescriptionValid &amp;&amp; isHabitImageValid)
+            {
+                UpdateHabitDataHandler updateHabitDataHandler = new UpdateHabitDataHandler(&quot;habits&quot;);
+
+                bool status = updateHabitDataHandler.UpdateHabit(habit).Result;
+
+                if (status)
+                {
+                    isSucess = status;
+                }
+            }
+
+            return true;
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[14,9,14,10,0],[15,13,15,78,0],[16,13,16,90,0],[17,13,17,78,0],[18,13,18,35,0],[20,13,20,83,0],[21,13,21,14,0],[22,17,22,102,0],[24,17,24,80,0],[26,17,26,28,0],[27,17,27,18,0],[28,21,28,39,0],[29,17,29,18,0],[30,13,30,14,0],[32,13,32,25,0],[33,9,33,10,0]]);
+    </script>
+  </body>
+</html>

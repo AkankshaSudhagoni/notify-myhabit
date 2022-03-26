@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Services\Implementations\AdminLoginImpl.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using HabitApp.DBHandler.Childerns;
+using HabitApp.Models;
+using HabitApp.Services.Interfaces;
+using System;
+
+namespace HabitApp.Services.Implementations
+{
+    public class AdminLoginImpl : ILogin
+    {
+        public LoginSucessDTO login(LoginDataModel loginData)
+        {
+            //validate credentials and call login method 
+            string email = loginData.Email;
+            string password = loginData.Password;
+
+            bool isEmailValid = !String.IsNullOrEmpty(loginData.Email);
+            bool isPasswordValid = false;
+
+            if (loginData.Password.Length &gt; 0)
+            {
+                isPasswordValid = true;
+            }
+            LoginSucessDTO loginDto = null;
+            if (isEmailValid &amp;&amp; isPasswordValid)
+            {
+                AdminLoginDataHandler loginDBHandler = new AdminLoginDataHandler(&quot;adminData&quot;);
+
+                try
+                {
+                    loginDto = loginDBHandler.Login(loginData).Result;
+                }
+                catch (System.AggregateException)
+                {
+                    loginDto = new LoginSucessDTO();
+                    loginDto.LoginStatus = false;
+                }
+
+            }
+
+
+
+            return loginDto;
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[11,9,11,10,0],[13,13,13,44,0],[14,13,14,50,0],[16,13,16,72,0],[17,13,17,42,0],[19,13,19,47,0],[20,13,20,14,0],[21,17,21,40,0],[22,13,22,14,0],[23,13,23,44,0],[24,13,24,49,0],[25,13,25,14,0],[26,17,26,95,0],[29,17,29,18,0],[30,21,30,71,0],[31,17,31,18,0],[32,17,32,50,0],[33,17,33,18,0],[34,21,34,53,0],[35,21,35,50,0],[36,17,36,18,0],[38,13,38,14,0],[42,13,42,29,0],[43,9,43,10,0]]);
+    </script>
+  </body>
+</html>

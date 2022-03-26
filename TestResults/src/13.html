@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\DBHandler\Childerns\SignUpDataHandler.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using HabitApp.Models;
+using MongoDB.Bson;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace HabitApp.DBHandler.Childerns
+{
+    public class SignUpDataHandler : DBHandler
+    {
+        public SignUpDataHandler(string collectionName) : base(collectionName)
+        {
+            
+        }
+
+
+        public Task&lt;bool&gt; SignUp(UserModel userData) 
+        {
+            bool status = false;
+            //save user data to data base and return UserModel
+
+            Task signUpTask = collection.InsertOneAsync(userData.ToBsonDocument());
+
+            signUpTask.Wait();
+
+            if (signUpTask.IsCompleted)
+            {
+
+                status = true;
+
+            }
+            else 
+            {
+                status = false;
+            }
+
+            return Task.FromResult(status);
+
+
+
+        }
+
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[12,59,12,79,0],[13,9,13,10,0],[15,9,15,10,0],[19,9,19,10,0],[20,13,20,33,0],[23,13,23,84,0],[25,13,25,31,0],[27,13,27,40,0],[28,13,28,14,0],[30,17,30,31,0],[32,13,32,14,0],[34,13,34,14,0],[35,17,35,32,0],[36,13,36,14,0],[38,13,38,44,0],[42,9,42,10,0]]);
+    </script>
+  </body>
+</html>

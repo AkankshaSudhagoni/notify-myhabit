@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Services\Implementations\ViewHabitImpl.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using HabitApp.DBHandler.Childerns;
+using HabitApp.Models;
+using HabitApp.Services.Interfaces;
+using MongoDB.Bson;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace HabitApp.Services.Implementations
+{
+    public class ViewHabitImpl : IViewHabit
+    {
+        public bool deleteHabit(ObjectId habitId)
+        {
+            ViewHabitDataHandler viewDataHandler = new ViewHabitDataHandler(&quot;habits&quot;);
+
+            return viewDataHandler.deleteHabit(habitId);
+        }
+
+        public List&lt;HabitModel&gt; getHabitModels()
+        {
+            List&lt;HabitModel&gt; modelsList = new List&lt;HabitModel&gt;();
+            ViewHabitDataHandler viewDataHandler = new ViewHabitDataHandler(&quot;habits&quot;);
+
+            try {
+
+                modelsList = viewDataHandler.getHabits().Result;
+
+            }
+            catch (Exception) 
+            {
+
+            }
+
+
+            return modelsList;
+        }
+
+
+        public List&lt;HabitModel&gt; getHabitModelsById(ObjectId userId)
+        {
+            List&lt;HabitModel&gt; modelsList = new List&lt;HabitModel&gt;();
+            ViewHabitDataHandler viewDataHandler = new ViewHabitDataHandler(&quot;habits&quot;);
+
+            try
+            {
+
+                modelsList = viewDataHandler.getHabitsByUser(userId).Result;
+
+            }
+            catch (Exception)
+            {
+
+            }
+
+
+            return modelsList;
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[15,9,15,10,0],[16,13,16,87,0],[18,13,18,57,0],[19,9,19,10,0],[22,9,22,10,1],[23,13,23,66,1],[24,13,24,87,1],[26,17,26,18,1],[28,17,28,65,1],[30,13,30,14,1],[31,13,31,30,0],[32,13,32,14,0],[34,13,34,14,0],[37,13,37,31,1],[38,9,38,10,1],[42,9,42,10,0],[43,13,43,66,0],[44,13,44,87,0],[47,13,47,14,0],[49,17,49,77,0],[51,13,51,14,0],[52,13,52,30,0],[53,13,53,14,0],[55,13,55,14,0],[58,13,58,31,0],[59,9,59,10,0]]);
+    </script>
+  </body>
+</html>

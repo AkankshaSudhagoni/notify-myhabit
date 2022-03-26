@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\DBHandler\Childerns\UpdateHabitDataHandler.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using HabitApp.Models;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace HabitApp.DBHandler.Childerns
+{
+    public class UpdateHabitDataHandler : DBHandler
+    {
+        public UpdateHabitDataHandler(string collectionName) : base(collectionName)
+        {
+
+        }
+
+        public Task&lt;bool&gt; UpdateHabit(HabitModel habit)
+        {
+            bool status = false;
+
+            //create a custom bson to pass data to update
+
+            BsonDocument bd = new BsonDocument();
+            bd.Add(&quot;habitTitle&quot;,habit.habitTitle);
+            bd.Add(&quot;habitDescription&quot;,habit.habitDescription);
+            bd.Add(&quot;habitImage&quot;,habit.habitImage);
+            bd.Add(&quot;habitVideoUrl&quot;,habit.habitVideoUrl);
+            bd.Add(&quot;habitAudio&quot;,habit.habitAudio);
+            bd.Add(&quot;habitStatus&quot;,habit.habitStatus);
+            bd.Add(&quot;habitPoints&quot;,habit.habitPoints);
+            bd.Add(&quot;userId&quot;,habit.userId);
+
+
+            //update
+            Task updateHabitTask = collection.ReplaceOneAsync(&quot;{ _id: ObjectId(&#39;&quot;+habit.habitId.ToString()+&quot;&#39;)  }&quot;, bd);
+            
+            updateHabitTask.Wait();
+
+            if (updateHabitTask.IsCompleted)
+            {
+                status = true;
+            }
+            else
+            {
+                status = false;
+            }
+
+            return Task.FromResult(status);
+        }
+
+
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[13,64,13,84,0],[14,9,14,10,0],[16,9,16,10,0],[19,9,19,10,0],[20,13,20,33,0],[24,13,24,50,0],[25,13,25,51,0],[26,13,26,63,0],[27,13,27,51,0],[28,13,28,57,0],[29,13,29,51,0],[30,13,30,53,0],[31,13,31,53,0],[32,13,32,43,0],[36,13,36,121,0],[38,13,38,36,0],[40,13,40,45,0],[41,13,41,14,0],[42,17,42,31,0],[43,13,43,14,0],[45,13,45,14,0],[46,17,46,32,0],[47,13,47,14,0],[49,13,49,44,0],[50,9,50,10,0]]);
+    </script>
+  </body>
+</html>
