@@ -44,8 +44,8 @@ The objective of our web application is to display the habit of the student on b
   3. Run a unit test</br>
  
  
-• For unit testing, we utilized Xunit.
-• The Coverage Report was generated with the help of dotcover.
+• For unit testing, we **utilized Xunit** </br>
+• The Coverage Report was generated with the help of **dotCover**. </br>
 • You can find our **[Sonarcloud](https://sonarcloud.io/summary/new_code?id=AkankshaSudhagoni_notify-myhabit)** for Notify MyHabit here </br>
 • You can find our **[Test Results Coverage Report](https://akankshasudhagoni.github.io/notify-myhabit/TestResults.html)** for Notify MyHabit here
 
