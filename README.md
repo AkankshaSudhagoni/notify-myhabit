@@ -52,7 +52,7 @@ The objective of our web application is to display the habit of the student on b
 
 
 ## Security analysis
-• **[Codacy](https://app.codacy.com/gh/AkankshaSudhagoni/notify-myhabit/dashboard?branch=main)** </br>
+• You can find our **[Codacy](https://app.codacy.com/gh/AkankshaSudhagoni/notify-myhabit/dashboard?branch=main)** for Notify MyHabit here </br>
 
 ## Documentation Sites
  
