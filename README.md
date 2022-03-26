@@ -35,7 +35,8 @@ The objective of our web application is to display the habit of the student on b
 • When ou make changes to a repo and there are **no changes** in Heroku, try **manually deploying** the changes to see if they are reflected in the application.
 
 ## Test
-• [Unit test results here](https://akankshasudhagoni.github.io/notify-myhabit/TestResults.html)
+• **You can find our [TestResults Coverage Report](https://akankshasudhagoni.github.io/notify-myhabit/TestResults.html)** for Notify MyHabit here
+
 
 ## Security analysis
 • **[Sonarcloud](https://sonarcloud.io/summary/new_code?id=AkankshaSudhagoni_notify-myhabit)** </br>
