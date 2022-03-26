@@ -68,12 +68,14 @@ namespace notify_myhabit.Test
             viewHabitsModel.OnGet();
             Assert.Equal(null, null);
         }
+        [Fact]
+        public void Test9()
 
+        {
+            ViewUserAdminPageModel viewUserAdminPageModel = new ViewUserAdminPageModel();
+            viewUserAdminPageModel.OnGet();
+            Assert.Equal(null, null);    
+        }
     }
 }
-
-
-
-
-
 
