@@ -35,11 +35,23 @@ The objective of our web application is to display the habit of the student on b
 • When ou make changes to a repo and there are **no changes** in Heroku, try **manually deploying** the changes to see if they are reflected in the application.
 
 ## Test
-• **You can find our [TestResults Coverage Report](https://akankshasudhagoni.github.io/notify-myhabit/TestResults.html)** for Notify MyHabit here
+• In Visual Studio, I added the necessary tools for unit testing our code.</br>
+• After you've installed all of the tools, you'll notice a unit test section option in your right-click menu.</br>
+• To get code coverage, follow this process.</br>
+  
+  1. Unit test debugging </br>
+  2. Covering the unit test</br>
+  3. Run a unit test</br>
+ 
+ 
+• For unit testing, we utilized Xunit.
+• The Coverage Report was generated with the help of dotcover.
+• You can find our **[Sonarcloud](https://sonarcloud.io/summary/new_code?id=AkankshaSudhagoni_notify-myhabit)** for Notify MyHabit here </br>
+• You can find our **[Test Results Coverage Report](https://akankshasudhagoni.github.io/notify-myhabit/TestResults.html)** for Notify MyHabit here
+
 
 
 ## Security analysis
-• **[Sonarcloud](https://sonarcloud.io/summary/new_code?id=AkankshaSudhagoni_notify-myhabit)** </br>
 • **[Codacy](https://app.codacy.com/gh/AkankshaSudhagoni/notify-myhabit/dashboard?branch=main)** </br>
 
 ## Documentation Sites
