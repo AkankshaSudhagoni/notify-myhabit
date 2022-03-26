@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\DBHandler\Childerns\ResetPasswordDataHandler.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using HabitApp.Models;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace HabitApp.DBHandler.Childerns
+{
+    public class ResetPasswordDataHandler : DBHandler
+    {
+        public ResetPasswordDataHandler(string collectionName) : base(collectionName)
+        {
+
+        }
+
+        //this method retrive the email of the user for relevent code
+        public String ResetPassword(ResetPasswordDataModel resetPassword)
+        {
+            try
+            {
+                String code = resetPassword.code;
+            String email = &quot;&quot;;
+            Task&lt;BsonDocument&gt; resetPasswordTask = collection.FindAsync(new BsonDocument { { &quot;Code&quot;, code } }).Result.FirstAsync();
+
+            
+                email = resetPasswordTask.Result.GetValue(&quot;Email&quot;).ToString();
+            
+            resetPasswordTask.Wait();
+
+            if (resetPasswordTask.IsCompleted)
+            {
+
+                return email;
+
+            }
+
+            }
+            catch (Exception)
+            {
+            }
+            return &quot;&quot;;
+
+
+        }
+      
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[13,66,13,86,0],[14,9,14,10,0],[16,9,16,10,0],[20,9,20,10,0],[22,13,22,14,0],[23,17,23,50,0],[24,13,24,31,0],[25,13,25,132,0],[28,17,28,79,0],[30,13,30,38,0],[32,13,32,47,0],[33,13,33,14,0],[35,17,35,30,0],[39,13,39,14,0],[40,13,40,30,0],[41,13,41,14,0],[42,13,42,14,0],[43,13,43,23,0],[46,9,46,10,0]]);
+    </script>
+  </body>
+</html>

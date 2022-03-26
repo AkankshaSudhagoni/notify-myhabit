@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\DBHandler\DBHandler.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using MongoDB.Bson;
+using MongoDB.Driver;
+using System;
+
+namespace HabitApp.DBHandler
+{
+    public class DBHandler
+    {
+        protected IMongoCollection&lt;BsonDocument&gt; collection = null;
+
+
+        
+        public DBHandler(string collectionName)
+        {
+            this.collection = getMongoCollectionByName(collectionName);
+        }
+
+        //get the collection by passing the collection name
+        public IMongoCollection&lt;BsonDocument&gt; getMongoCollectionByName(String collectionName)
+        {
+            DatabaseUtil dbUtil = new DatabaseUtil();
+            return dbUtil.getCollection(collectionName);
+        }
+
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[9,9,9,68,0],[13,9,13,48,0],[14,9,14,10,0],[15,13,15,72,0],[16,9,16,10,0],[20,9,20,10,0],[21,13,21,54,0],[22,13,22,57,0],[23,9,23,10,0]]);
+    </script>
+  </body>
+</html>

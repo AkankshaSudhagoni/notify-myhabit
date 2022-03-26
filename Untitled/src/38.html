@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Pages\Signup.cshtml.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using HabitApp.Models;
+using HabitApp.Services.Implementations;
+using HabitApp.Services.Interfaces;
+using HabitApp.Utils;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+
+namespace HabitApp.Pages
+{
+    public class SignupModel : PageModel
+    {
+        [BindProperty]
+        public SignUpDataModel SignUpdata { get; set; }
+
+        public void OnGet()
+        {
+        }
+
+        public IActionResult OnPost()
+        {
+
+            if (SignUpdata.Password.Equals(SignUpdata.ConfirmPassword))
+            {
+                ISignUp signUpService = new SignUpImpl();
+
+                UserModel user = new UserModel();
+
+                user.Email = SignUpdata.Email;
+                user.FullName = SignUpdata.FullName;
+                user.Password = Hashing.Base64Encode(SignUpdata.Password);
+
+                bool isSucess = signUpService.signUp(user);
+
+                if (isSucess)
+                {
+                    return RedirectToPage(&quot;index&quot;);
+                }
+            }
+            else 
+            {
+                ViewData[&quot;Message&quot;] = string.Format(&quot;Passwords Dose Not Match!&quot;);
+            }
+
+           
+
+            return null;
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[17,45,17,49,0],[17,50,17,54,0],[20,9,20,10,0],[21,9,21,10,0],[24,9,24,10,0],[26,13,26,72,0],[27,13,27,14,0],[28,17,28,58,0],[30,17,30,50,0],[32,17,32,47,0],[33,17,33,53,0],[34,17,34,75,0],[36,17,36,60,0],[38,17,38,30,0],[39,17,39,18,0],[40,21,40,52,0],[42,13,42,14,0],[44,13,44,14,0],[45,17,45,82,0],[46,13,46,14,0],[50,13,50,25,0],[51,9,51,10,0]]);
+    </script>
+  </body>
+</html>

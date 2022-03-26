@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Services\Implementations\AllocatePointsImpl.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using HabitApp.DBHandler.Childerns;
+using HabitApp.Models;
+using HabitApp.Services.Interfaces;
+using System;
+
+namespace HabitApp.Services.Implementations
+{
+    public class AllocatePointsImpl : IAllocatePoints
+    {
+        //valid date and invoke method to update points of the habit
+        public bool addPoints(HabitModel habit)
+        {
+            bool isHabitTitleValid = !String.IsNullOrEmpty(habit.habitTitle);
+            bool isHabitPointsValid = false;
+            if (habit.habitPoints &gt; 0)
+            { 
+                isHabitPointsValid = true;
+            
+            }
+
+            bool isSucess = false;
+
+            if (isHabitPointsValid)
+            {
+                AllocatePointDataHandler addPointDataHandler = new AllocatePointDataHandler(&quot;habits&quot;);
+
+                bool status = addPointDataHandler.AdminAllocatePoints(habit).Result;
+
+                if (status)
+                {
+                    isSucess = status;
+                }
+            }
+
+            return isSucess;
+        }
+
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[12,9,12,10,0],[13,13,13,78,0],[14,13,14,45,0],[15,13,15,39,0],[16,13,16,14,0],[17,17,17,43,0],[19,13,19,14,0],[21,13,21,35,0],[23,13,23,36,0],[24,13,24,14,0],[25,17,25,103,0],[27,17,27,85,0],[29,17,29,28,0],[30,17,30,18,0],[31,21,31,39,0],[32,17,32,18,0],[33,13,33,14,0],[35,13,35,29,0],[36,9,36,10,0]]);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit.Test\UnitTest1.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using HabitApp.Pages;
+using Microsoft.Extensions.Logging;
+using System;
+using Xunit;
+
+namespace notify_myhabit.Test
+{
+    public class UnitTest1
+    {
+        Logger&lt;Index&gt; l ;
+        [Fact]
+        public void Test1()
+        {
+            LandingPageModel landingPageModel = new LandingPageModel();
+            landingPageModel.OnGet();
+            Assert.Equal(null, null);
+             IndexModel indexModel = new IndexModel((ILogger&lt;IndexModel&gt;)l);
+            
+        }
+    }
+}
+
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[13,9,13,10,1],[14,13,14,72,1],[15,13,15,38,1],[16,13,16,38,1],[17,14,17,77,1],[19,9,19,10,1]]);
+    </script>
+  </body>
+</html>
