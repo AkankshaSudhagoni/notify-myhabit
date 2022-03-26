@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Pages\Signup.cshtml.cs</title>
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Pages\ViewUserAdminPage.cshtml.cs</title>
     <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
   </head>
@@ -21,50 +21,52 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace HabitApp.Pages
 {
-    public class SignupModel : PageModel
+    public class ViewUserAdminPageModel : PageModel
     {
+
         [BindProperty]
-        public SignUpDataModel SignUpdata { get; set; }
+        public LoginCredentialsModel LoginCredentials { get; set; }
 
         public void OnGet()
         {
+
         }
 
         public IActionResult OnPost()
         {
+            ILogin loginService = new LoginImpl();
 
-            if (SignUpdata.Password.Equals(SignUpdata.ConfirmPassword))
+            LoginDataModel loginData = new LoginDataModel();
+
+            loginData.Email = LoginCredentials.Email;
+            loginData.Password = Hashing.Base64Encode(LoginCredentials.Password);
+
+
+            LoginSucessDTO postLogin = loginService.login(loginData);
+
+            if (postLogin.LoginStatus)
             {
-                ISignUp signUpService = new SignUpImpl();
 
-                UserModel user = new UserModel();
+                ViewData[&quot;LoginStatus&quot;] = string.Format(&quot;200&quot;);
+                ViewData[&quot;Email&quot;] = string.Format(loginData.Email);
 
-                user.Email = SignUpdata.Email;
-                user.FullName = SignUpdata.FullName;
-                user.Password = Hashing.Base64Encode(SignUpdata.Password);
-
-                bool isSucess = signUpService.signUp(user);
-
-                if (isSucess)
-                {
-                    return RedirectToPage(&quot;index&quot;);
-                }
             }
-            else 
+            else
             {
-                ViewData[&quot;Message&quot;] = string.Format(&quot;Passwords Dose Not Match!&quot;);
+                ViewData[&quot;LoginStatus&quot;] = string.Format(&quot;500&quot;);
+                ViewData[&quot;Message&quot;] = string.Format(&quot;Login Failed Please try again!&quot;);
             }
-
-           
 
             return null;
         }
+
+
     }
 }
 
     </pre>
     <script type="text/javascript">
-      highlightRanges([[17,45,17,49,0],[17,50,17,54,0],[20,9,20,10,0],[21,9,21,10,0],[24,9,24,10,0],[26,13,26,72,0],[27,13,27,14,0],[28,17,28,58,0],[30,17,30,50,0],[32,17,32,47,0],[33,17,33,53,0],[34,17,34,75,0],[36,17,36,60,0],[38,17,38,30,0],[39,17,39,18,0],[40,21,40,52,0],[42,13,42,14,0],[44,13,44,14,0],[45,17,45,82,0],[46,13,46,14,0],[50,13,50,25,0],[51,9,51,10,0]]);
+      highlightRanges([[18,57,18,61,0],[18,62,18,66,0],[21,9,21,10,0],[23,9,23,10,0],[26,9,26,10,0],[27,13,27,51,0],[29,13,29,61,0],[31,13,31,54,0],[32,13,32,82,0],[35,13,35,70,0],[37,13,37,39,0],[38,13,38,14,0],[40,17,40,64,0],[41,17,41,68,0],[43,13,43,14,0],[45,13,45,14,0],[46,17,46,64,0],[47,17,47,87,0],[48,13,48,14,0],[50,13,50,25,0],[51,9,51,10,0]]);
     </script>
   </body>
 </html>

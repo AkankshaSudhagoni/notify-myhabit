@@ -2,13 +2,14 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Models\LoginSucessDTO.cs</title>
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Models\UserModel.cs</title>
     <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
   </head>
   <body>
     <pre id="content" class="source-code">
 using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,19 +17,22 @@ using System.Threading.Tasks;
 
 namespace HabitApp.Models
 {
-    public class LoginSucessDTO
+    public class UserModel
     {
+        [BsonId]
         public ObjectId UserId { get; set; }
         public string FullName { get; set; }
-        public bool LoginStatus { get; set; }
-        public string Email { get; set;  }
-        public string Role { get; set;  }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        
+
+
     }
 }
 
     </pre>
     <script type="text/javascript">
-      highlightRanges([[11,34,11,38,0],[11,39,11,43,0],[12,34,12,38,0],[12,39,12,43,0],[13,35,13,39,0],[13,40,13,44,0],[14,31,14,35,0],[14,36,14,40,0],[15,30,15,34,0],[15,35,15,39,0]]);
+      highlightRanges([[13,34,13,38,0],[13,39,13,43,0],[14,34,14,38,0],[14,39,14,43,0],[15,31,15,35,0],[15,36,15,40,0],[16,34,16,38,0],[16,39,16,43,0]]);
     </script>
   </body>
 </html>

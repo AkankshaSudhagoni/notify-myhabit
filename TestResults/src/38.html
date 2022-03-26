@@ -2,65 +2,28 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Pages\ResetPassword.cshtml.cs</title>
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Pages\ViewSingleHabit.cshtml.cs</title>
     <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
   </head>
   <body>
     <pre id="content" class="source-code">
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using HabitApp.Models;
-using HabitApp.Services.Implementations;
-using HabitApp.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace HabitApp.Pages
 {
-    public class ResetPasswordModel : PageModel
+    public class ViewSingleHabitModel : PageModel
     {
-        [BindProperty]
-        public ResetPasswordDataModel ResetPasswordData { get; set; }
         public void OnGet()
         {
-
-        }
-
-        public IActionResult OnPost()
-        {
-            IResetPassword resetPassword = new ResetPasswordImpl();
-           bool status =  resetPassword.ResetPassword(ResetPasswordData);
-
-            //validate two password and call the method
-            if (ResetPasswordData.newPassword == ResetPasswordData.confirmPassword)
-            {
-                if (status)
-                {
-                    try { return RedirectToPage(&quot;index&quot;); } catch (Exception) { ViewData[&quot;Message&quot;] = string.Format(&quot;Something went wrong!!!&quot;); }
-                }
-                else
-                {
-                    ViewData[&quot;Message&quot;] = string.Format(&quot;Something went wrong!!!&quot;);
-                }
-            }
-            else 
-            {
-                ViewData[&quot;Message&quot;] = string.Format(&quot;Something went wrong!!!&quot;);
-            }
-
-            return null;
-        
-
         }
     }
 }
 
     </pre>
     <script type="text/javascript">
-      highlightRanges([[16,59,16,63,0],[16,64,16,68,0],[18,9,18,10,0],[20,9,20,10,0],[23,9,23,10,0],[24,13,24,68,0],[25,12,25,74,0],[28,13,28,84,0],[29,13,29,14,0],[30,17,30,28,0],[31,17,31,18,0],[32,25,32,26,0],[32,27,32,58,0],[32,61,32,78,0],[32,79,32,80,0],[32,81,32,144,0],[32,145,32,146,0],[33,17,33,18,0],[35,17,35,18,0],[36,21,36,84,0],[37,17,37,18,0],[38,13,38,14,0],[40,13,40,14,0],[41,17,41,80,0],[42,13,42,14,0],[44,13,44,25,0],[47,9,47,10,0]]);
+      highlightRanges([[9,9,9,10,1],[10,9,10,10,1]]);
     </script>
   </body>
 </html>

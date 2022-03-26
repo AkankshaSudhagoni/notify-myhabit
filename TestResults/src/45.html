@@ -2,54 +2,66 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Services\Implementations\AddHabitImpl.cs</title>
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Services\Implementations\LoginImpl.cs</title>
     <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
   </head>
   <body>
     <pre id="content" class="source-code">
-using HabitApp.DBHandler.Childerns;
 using HabitApp.Models;
 using HabitApp.Services.Interfaces;
+using HabitApp.DBHandler.Childerns;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Auth0.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
 
 namespace HabitApp.Services.Implementations
 {
-    public class AddHabitImpl : IAddHabit
+    public class LoginImpl : ILogin
     {
-        public bool addHabit(HabitModel habit)
+       
+        public LoginSucessDTO login(LoginDataModel loginData)
         {
+            string email = loginData.Email;
+            string password = loginData.Password;
 
-            bool isHabitTitleValid = !String.IsNullOrEmpty(habit.habitTitle);
-            bool isHabitDescriptionValid = !String.IsNullOrEmpty(habit.habitDescription);
- 
+            bool isEmailValid = !String.IsNullOrEmpty(loginData.Email);
+            bool isPasswordValid = false;
 
-            bool isSucess = false;
-
-            if (isHabitTitleValid &amp;&amp; isHabitDescriptionValid )
+            if (loginData.Password.Length &gt; 0) 
             {
-                AddHabitDataHandler addHabitDataHandler = new AddHabitDataHandler(&quot;habits&quot;);
+                isPasswordValid = true;
+            }
+            LoginSucessDTO loginDto = null;
+            if (isEmailValid &amp;&amp; isPasswordValid) 
+            {
+                LoginDataHandler loginDBHandler = new LoginDataHandler(&quot;habbitCollection&quot;);
 
-
-                bool status = addHabitDataHandler.AddHabit(habit).Result;
-
-                if (status)
+                try
                 {
-                    isSucess = status;
+                    loginDto = loginDBHandler.Login(loginData).Result;
                 }
+                catch (System.AggregateException) 
+                {
+                    loginDto = new LoginSucessDTO();
+                    loginDto.LoginStatus = false;
+                }
+
             }
 
-            return isSucess;
+
+
+            return loginDto;
         }
     }
 }
 
     </pre>
     <script type="text/javascript">
-      highlightRanges([[14,9,14,10,0],[16,13,16,78,0],[17,13,17,90,0],[20,13,20,35,0],[22,13,22,63,0],[23,13,23,14,0],[24,17,24,93,0],[27,17,27,74,0],[29,17,29,28,0],[30,17,30,18,0],[31,21,31,39,0],[32,17,32,18,0],[33,13,33,14,0],[35,13,35,29,0],[36,9,36,10,0]]);
+      highlightRanges([[17,9,17,10,0],[18,13,18,44,0],[19,13,19,50,0],[21,13,21,72,0],[22,13,22,42,0],[24,13,24,47,0],[25,13,25,14,0],[26,17,26,40,0],[27,13,27,14,0],[28,13,28,44,0],[29,13,29,49,0],[30,13,30,14,0],[31,17,31,92,0],[34,17,34,18,0],[35,21,35,71,0],[36,17,36,18,0],[37,17,37,50,0],[38,17,38,18,0],[39,21,39,53,0],[40,21,40,50,0],[41,17,41,18,0],[43,13,43,14,0],[47,13,47,29,0],[48,9,48,10,0]]);
     </script>
   </body>
 </html>

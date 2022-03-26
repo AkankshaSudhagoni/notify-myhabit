@@ -2,71 +2,55 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Pages\ViewUserAdminPage.cshtml.cs</title>
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Services\Implementations\AllocatePointsImpl.cs</title>
     <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
   </head>
   <body>
     <pre id="content" class="source-code">
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using HabitApp.DBHandler.Childerns;
 using HabitApp.Models;
-using HabitApp.Services.Implementations;
 using HabitApp.Services.Interfaces;
-using HabitApp.Utils;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
 
-namespace HabitApp.Pages
+namespace HabitApp.Services.Implementations
 {
-    public class ViewUserAdminPageModel : PageModel
+    public class AllocatePointsImpl : IAllocatePoints
     {
-
-        [BindProperty]
-        public LoginCredentialsModel LoginCredentials { get; set; }
-
-        public void OnGet()
+        //valid date and invoke method to update points of the habit
+        public bool addPoints(HabitModel habit)
         {
-
-        }
-
-        public IActionResult OnPost()
-        {
-            ILogin loginService = new LoginImpl();
-
-            LoginDataModel loginData = new LoginDataModel();
-
-            loginData.Email = LoginCredentials.Email;
-            loginData.Password = Hashing.Base64Encode(LoginCredentials.Password);
-
-
-            LoginSucessDTO postLogin = loginService.login(loginData);
-
-            if (postLogin.LoginStatus)
-            {
-
-                ViewData[&quot;LoginStatus&quot;] = string.Format(&quot;200&quot;);
-                ViewData[&quot;Email&quot;] = string.Format(loginData.Email);
-
-            }
-            else
-            {
-                ViewData[&quot;LoginStatus&quot;] = string.Format(&quot;500&quot;);
-                ViewData[&quot;Message&quot;] = string.Format(&quot;Login Failed Please try again!&quot;);
+            bool isHabitTitleValid = !String.IsNullOrEmpty(habit.habitTitle);
+            bool isHabitPointsValid = false;
+            if (habit.habitPoints &gt; 0)
+            { 
+                isHabitPointsValid = true;
+            
             }
 
-            return null;
-        }
+            bool isSucess = false;
 
+            if (isHabitPointsValid)
+            {
+                AllocatePointDataHandler addPointDataHandler = new AllocatePointDataHandler(&quot;habits&quot;);
+
+                bool status = addPointDataHandler.AdminAllocatePoints(habit).Result;
+
+                if (status)
+                {
+                    isSucess = status;
+                }
+            }
+
+            return isSucess;
+        }
 
     }
 }
 
     </pre>
     <script type="text/javascript">
-      highlightRanges([[18,57,18,61,0],[18,62,18,66,0],[21,9,21,10,0],[23,9,23,10,0],[26,9,26,10,0],[27,13,27,51,0],[29,13,29,61,0],[31,13,31,54,0],[32,13,32,82,0],[35,13,35,70,0],[37,13,37,39,0],[38,13,38,14,0],[40,17,40,64,0],[41,17,41,68,0],[43,13,43,14,0],[45,13,45,14,0],[46,17,46,64,0],[47,17,47,87,0],[48,13,48,14,0],[50,13,50,25,0],[51,9,51,10,0]]);
+      highlightRanges([[12,9,12,10,0],[13,13,13,78,0],[14,13,14,45,0],[15,13,15,39,0],[16,13,16,14,0],[17,17,17,43,0],[19,13,19,14,0],[21,13,21,35,0],[23,13,23,36,0],[24,13,24,14,0],[25,17,25,103,0],[27,17,27,85,0],[29,17,29,28,0],[30,17,30,18,0],[31,21,31,39,0],[32,17,32,18,0],[33,13,33,14,0],[35,13,35,29,0],[36,9,36,10,0]]);
     </script>
   </body>
 </html>

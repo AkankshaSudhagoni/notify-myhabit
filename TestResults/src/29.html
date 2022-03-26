@@ -2,84 +2,48 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Pages\AccountController.cs</title>
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Pages\Error.cshtml.cs</title>
     <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
   </head>
   <body>
     <pre id="content" class="source-code">
-using Auth0.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
-using System.Security.Claims;
-using Auth0.AspNetCore.Authentication;
+using System.Threading.Tasks;
 
 namespace HabitApp.Pages
 {
-    public class UserController : Controller
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    [IgnoreAntiforgeryToken]
+    public class ErrorModel : PageModel
     {
-        public async Task Login(string returnUrl = &quot;/&quot;)
-        {
-            var authenticationProperties = new LoginAuthenticationPropertiesBuilder()
-                .WithRedirectUri(returnUrl)
-                .Build();
+        public string RequestId { get; set; }
 
-            await HttpContext.ChallengeAsync(Auth0Constants.AuthenticationScheme, authenticationProperties);
+        public bool ShowRequestId =&gt; !string.IsNullOrEmpty(RequestId);
+
+        private readonly ILogger&lt;ErrorModel&gt; _logger;
+
+        public ErrorModel(ILogger&lt;ErrorModel&gt; logger)
+        {
+            _logger = logger;
         }
 
-        [Authorize]
-        public async Task Logout()
+        public void OnGet()
         {
-            var authenticationProperties = new LogoutAuthenticationPropertiesBuilder()
-                // Indicate here where Auth0 should redirect the user after a logout.
-                // Note that the resulting absolute Uri must be whitelisted in 
-                .WithRedirectUri(Url.Action(&quot;Index&quot;, &quot;Home&quot;))
-                .Build();
-
-            await HttpContext.SignOutAsync(Auth0Constants.AuthenticationScheme, authenticationProperties);
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-        }
-
-        //[Authorize]
-        //public IActionResult Profile()
-        //{
-        //    return View(new UserProfileViewModel()
-        //    {
-        //        Name = User.Identity.Name,
-        //        EmailAddress = User.Claims.FirstOrDefault(c =&gt; c.Type == ClaimTypes.Email)?.Value,
-        //        ProfileImage = User.Claims.FirstOrDefault(c =&gt; c.Type == &quot;picture&quot;)?.Value
-        //    });
-        //}
-
-
-        /// &lt;summary&gt;
-        /// This is just a helper action to enable you to easily see all claims related to a user. It helps when debugging your
-        /// application to see the in claims populated from the Auth0 ID Token
-        /// &lt;/summary&gt;
-        /// &lt;returns&gt;&lt;/returns&gt;
-        [Authorize]
-        public IActionResult Claims()
-        {
-            return View();
-        }
-
-        public IActionResult AccessDenied()
-        {
-            return View();
+            RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
         }
     }
 }
 
     </pre>
     <script type="text/javascript">
-      highlightRanges([[19,9,19,10,0],[20,13,22,26,0],[24,13,24,109,0],[25,9,25,10,0],[29,9,29,10,0],[30,13,34,26,0],[36,13,36,107,0],[37,13,37,95,0],[38,9,38,10,0],[59,9,59,10,0],[60,13,60,27,0],[61,9,61,10,0],[64,9,64,10,0],[65,13,65,27,0],[66,9,66,10,0]]);
+      highlightRanges([[16,35,16,39,0],[16,40,16,44,0],[18,38,18,70,0],[22,9,22,54,0],[23,9,23,10,0],[24,13,24,30,0],[25,9,25,10,0],[28,9,28,10,0],[29,13,29,77,0],[30,9,30,10,0]]);
     </script>
   </body>
 </html>

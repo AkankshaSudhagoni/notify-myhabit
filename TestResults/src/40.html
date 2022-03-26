@@ -2,69 +2,42 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Pages\UpdateHabit_.cshtml.cs</title>
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Program.cs</title>
     <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
   </head>
   <body>
     <pre id="content" class="source-code">
-using HabitApp.Models;
-using HabitApp.Services.Implementations;
-using HabitApp.Services.Interfaces;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using MongoDB.Bson;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace HabitApp.Pages
+namespace HabitApp
 {
-    public class UpdateHabit_Model : PageModel
+    public class Program
     {
-        [BindProperty]
-        public UpdateHabitModel UpdateHabitData { get; set; }
-        public void OnGet()
+        public static void Main(string[] args)
         {
-
+            CreateHostBuilder(args).Build().Run();
         }
 
-
-        public IActionResult OnPost()
-        {
-            IUpadeHabit updateHabitService = new UpdateHabitImpl();
-            HabitModel HabitData = new HabitModel();
-
-            HabitData.habitId = ObjectId.Parse(UpdateHabitData.habitId);
-            HabitData.habitTitle = UpdateHabitData.habitTitle;
-            HabitData.habitDescription = UpdateHabitData.habitDescription;
-            HabitData.habitAudio = UpdateHabitData.habitAudio;
-            HabitData.habitImage = UpdateHabitData.habitImage;
-            HabitData.habitVideoUrl = UpdateHabitData.habitVideoUrl;
-            HabitData.habitPoints = UpdateHabitData.habitPoints;
-            HabitData.habitStatus = UpdateHabitData.habitStatus;
-            HabitData.userId = ObjectId.Parse(UpdateHabitData.userId);
-
-
-
-
-            bool isSucess = updateHabitService.updateHabit(HabitData);
-
-
-            if (isSucess)
-            {
-                return RedirectToPage(&quot;/viewhabits&quot;);
-            }
-
-
-            return null;
-        }
-
-
-    
+        public static IHostBuilder CreateHostBuilder(string[] args) =&gt;
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =&gt;
+                {
+                    webBuilder.UseStartup&lt;Startup&gt;();
+                });
     }
 }
 
     </pre>
     <script type="text/javascript">
-      highlightRanges([[13,51,13,55,0],[13,56,13,60,0],[15,9,15,10,0],[17,9,17,10,0],[21,9,21,10,0],[22,13,22,68,0],[23,13,23,53,0],[25,13,25,73,0],[26,13,26,63,0],[27,13,27,75,0],[28,13,28,63,0],[29,13,29,63,0],[30,13,30,69,0],[31,13,31,65,0],[32,13,32,65,0],[33,13,33,71,0],[38,13,38,71,0],[41,13,41,26,0],[42,13,42,14,0],[43,17,43,54,0],[47,13,47,25,0],[48,9,48,10,0]]);
+      highlightRanges([[15,9,15,10,0],[16,13,16,51,0],[17,9,17,10,0],[20,13,22,17,0],[22,17,22,18,0],[22,18,23,21,0],[23,21,23,54,0],[23,54,24,17,0],[24,17,24,18,0],[24,18,24,19,0]]);
     </script>
   </body>
 </html>

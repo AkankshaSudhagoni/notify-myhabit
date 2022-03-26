@@ -2,14 +2,12 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Models\HabitModel.cs</title>
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Models\ResetPasswordDataModel.cs</title>
     <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
   </head>
   <body>
     <pre id="content" class="source-code">
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,53 +15,18 @@ using System.Threading.Tasks;
 
 namespace HabitApp.Models
 {
-    public class HabitModel
+    public class ResetPasswordDataModel
     {
-        [BsonId]
-        public ObjectId habitId { get; set; }
-        public string habitTitle { get; set; }
-        public string habitDescription { get; set; }
-        public string habitImage { get; set; }
-        public string habitVideoUrl { get; set; }
-        public string habitAudio { get; set; }
-        public bool habitStatus { get; set; }
-        public int habitPoints { get; set; }
-        public ObjectId userId { get; set; }
-
-        public HabitModel()
-        {
-        }
-
-        public HabitModel(ObjectId habitId, string habitTitle, string habitDescription, string habitImage, string habitVideoUrl, string habitAudio, bool habitStatus, int habitPoints, ObjectId userId)
-        {
-            this.habitId = habitId;
-            this.habitTitle = habitTitle;
-            this.habitDescription = habitDescription;
-            this.habitImage = habitImage;
-            this.habitVideoUrl = habitVideoUrl;
-            this.habitAudio = habitAudio;
-            this.habitStatus = habitStatus;
-            this.habitPoints = habitPoints;
-            this.userId = userId;
-        }
-
-        public HabitModel(string habitTitle, string habitDescription, string habitImage)
-        {
-            
-            this.habitTitle = habitTitle;
-            this.habitDescription = habitDescription;
-            this.habitImage = habitImage;
-            
-        }
-
-
+        public String code { get; set; }
+        public String newPassword { get; set; }
+        public String confirmPassword { get; set; }
 
     }
 }
 
     </pre>
     <script type="text/javascript">
-      highlightRanges([[13,35,13,39,0],[13,40,13,44,1],[14,36,14,40,0],[14,41,14,45,1],[15,42,15,46,0],[15,47,15,51,1],[16,36,16,40,0],[16,41,16,45,1],[17,39,17,43,0],[17,44,17,48,1],[18,36,18,40,0],[18,41,18,45,1],[19,35,19,39,0],[19,40,19,44,1],[20,34,20,38,0],[20,39,20,43,1],[21,34,21,38,0],[21,39,21,43,1],[23,9,23,28,1],[24,9,24,10,1],[25,9,25,10,1],[27,9,27,200,0],[28,9,28,10,0],[29,13,29,36,0],[30,13,30,42,0],[31,13,31,54,0],[32,13,32,42,0],[33,13,33,48,0],[34,13,34,42,0],[35,13,35,44,0],[36,13,36,44,0],[37,13,37,34,0],[38,9,38,10,0],[40,9,40,89,0],[41,9,41,10,0],[43,13,43,42,0],[44,13,44,54,0],[45,13,45,42,0],[47,9,47,10,0]]);
+      highlightRanges([[10,30,10,34,0],[10,35,10,39,0],[11,37,11,41,0],[11,42,11,46,0],[12,41,12,45,0],[12,46,12,50,0]]);
     </script>
   </body>
 </html>

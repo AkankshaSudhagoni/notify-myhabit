@@ -2,37 +2,70 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Models\UserModel.cs</title>
+    <title>C:\Users\s542423\Documents\GitHub\notify-myhabit\notify-myhabit\Pages\AdminLogin.cshtml.cs</title>
     <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
   </head>
   <body>
     <pre id="content" class="source-code">
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HabitApp.Models;
+using HabitApp.Services.Implementations;
+using HabitApp.Services.Interfaces;
+using HabitApp.Utils;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace HabitApp.Models
+namespace HabitApp.Pages
 {
-    public class UserModel
+    public class AdminLoginModel : PageModel
     {
-        [BsonId]
-        public ObjectId UserId { get; set; }
-        public string FullName { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        
+        [BindProperty]
+        public LoginCredentialsModel LoginCredentials { get; set; }
+
+        public void OnGet()
+        {
+        }
+
+        public IActionResult OnPost()
+        {
+            ILogin loginService = new AdminLoginImpl();
+
+            LoginDataModel adminLoginData = new LoginDataModel();
+
+            adminLoginData.Email = LoginCredentials.Email;
+            adminLoginData.Password =Hashing.Base64Encode(LoginCredentials.Password);
 
 
+            LoginSucessDTO postLogin = loginService.login(adminLoginData);
+
+            if (postLogin.LoginStatus)
+            {
+
+                ViewData[&quot;LoginStatus&quot;] = string.Format(&quot;200&quot;);
+                ViewData[&quot;Email&quot;] = string.Format(adminLoginData.Email);
+                ViewData[&quot;Role&quot;] = string.Format(&quot;Admin&quot;);
+                String id = postLogin.UserId.ToString();
+                ViewData[&quot;Id&quot;] = string.Format(id);
+
+            }
+            else
+            {
+                ViewData[&quot;LoginStatus&quot;] = string.Format(&quot;500&quot;);
+                //ViewData[&quot;Message&quot;] = string.Format(&quot;Login Failed Please try again!&quot;);
+            }
+
+            return null;
+        }
     }
 }
 
     </pre>
     <script type="text/javascript">
-      highlightRanges([[13,34,13,38,0],[13,39,13,43,0],[14,34,14,38,0],[14,39,14,43,0],[15,31,15,35,0],[15,36,15,40,0],[16,34,16,38,0],[16,39,16,43,0]]);
+      highlightRanges([[17,57,17,61,0],[17,62,17,66,0],[20,9,20,10,1],[21,9,21,10,1],[24,9,24,10,0],[25,13,25,56,0],[27,13,27,66,0],[29,13,29,59,0],[30,13,30,86,0],[33,13,33,75,0],[35,13,35,39,0],[36,13,36,14,0],[38,17,38,64,0],[39,17,39,73,0],[40,17,40,59,0],[41,17,41,57,0],[42,17,42,52,0],[44,13,44,14,0],[46,13,46,14,0],[47,17,47,64,0],[49,13,49,14,0],[51,13,51,25,0],[52,9,52,10,0]]);
     </script>
   </body>
 </html>
