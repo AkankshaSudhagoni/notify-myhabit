@@ -14,8 +14,21 @@ namespace notify_myhabit.Test
             LandingPageModel landingPageModel = new LandingPageModel();
             landingPageModel.OnGet();
             Assert.Equal(null, null);
-             IndexModel indexModel = new IndexModel((ILogger<IndexModel>)l);
             
+        }
+        [Fact]
+        public void Test2()
+        {
+            AddHabitModel addHabitModel = new AddHabitModel();
+            addHabitModel.OnGet();
+            Assert.Equal(null, null);
+        }
+        [Fact]
+        public void Test3()
+        {
+            AdminAllocatePointsModel adminAllocatePointsModel = new AdminAllocatePointsModel();
+            adminAllocatePointsModel.OnGet();
+            Assert.Equal(null, null);
         }
     }
 }
