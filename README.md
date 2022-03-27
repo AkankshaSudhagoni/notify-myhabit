@@ -35,7 +35,7 @@ The objective of our web application is to display the habit of the student on b
 • When ou make changes to a repo and there are **no changes** in Heroku, try **manually deploying** the changes to see if they are reflected in the application.
 
 ## Test
-• In Visual Studio, I added the necessary tools for unit testing our code.</br>
+• In Visual Studio, I added the necessary **[tools](https://github.com/RohitChandupatla/proposal-notify-myhabit/blob/main/studiotools.md)** for unit testing our code.</br>
 • After you've installed all of the tools, you'll notice a unit test section option in your right-click menu.</br>
 • To get code coverage, follow this process.</br>
   
