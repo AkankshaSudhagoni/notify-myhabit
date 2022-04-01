@@ -31,8 +31,8 @@ The objective of our web application is to display the habit of the student on b
 
 ## Deployment
 
-• When you make any **modifications** to the **repository**, the build will **begin to deploy automatically in heroku**. </br>
-• When ou make changes to a repo and there are **no changes** in Heroku, try **manually deploying** the changes to see if they are reflected in the application.
+• We made it easier for the application to be **deployed** automatically When you make any **changes** to the repository, the **build** will start **deploying** to Heroku **automatically**. </br>
+• If you make any changes to a repo and they **aren't** automatically deployed, try **manually** deploying them to see if they show up in the app.
 
 ## Test
 • In Visual Studio, I added the necessary **[tools](https://github.com/RohitChandupatla/proposal-notify-myhabit/blob/main/studiotools.md)** for unit testing our code.</br>
