@@ -15,8 +15,9 @@ The objective of our web application is to display the habit of the student on b
 
 ## External Requirements
 • To execute my project on your laptop, first install **[Visual Studio](https://visualstudio.microsoft.com/)**. </br>
+• You need to have an account on the **[MongoDB](https://www.mongodb.com/)** for the database. </br>
 • The workload **ASP.NET and web development** must be installed using the **Visual Studio installer**. </br>
-• In the visual studio installer, you must install **.NET 5.0** from **individual components**
+• In the visual studio installer, you must install **.NET 5.0** from **individual components** </br>
 
 ## Setup
 #### Following are the requirements to set up the virtual studio after cloning the my repository.
