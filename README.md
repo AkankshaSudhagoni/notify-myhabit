@@ -62,7 +62,7 @@ The objective of our web application is to display the habit of the student on b
 • **[Docfx](https://rohitchandupatla.github.io/notify-myhabit-docfx/)** </br>
 
 ## Links 
-
+• [You can find our **Presentation Slides** for Notify MyHabit here.](https://github.com/AkankshaSudhagoni/notify-myhabit/blob/main/Notify%20MyHabit.pptx) </br>
 • [You can find our **Request For Proposal** for Notify MyHabit here.](https://github.com/NaveenTanuku/HabitRemainder/blob/main/rfp.md) </br>
 • [You can find our **Proposal** for Notify MyHabit here.](https://github.com/RohitChandupatla/proposal-notify-myhabit/blob/main/Proposal.md)</br>
 • [You can find our **Wiki** for Notify MyHabit here.](https://github.com/AkankshaSudhagoni/Notify-MyHabit/wiki)</br>
