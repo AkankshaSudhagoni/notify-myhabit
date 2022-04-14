@@ -63,7 +63,7 @@ The objective of our web application is to display the habit of the student on b
 
 ## Presentation Slides
 
-• [You can find our **Presentation Slides** for Notify MyHabit here.](https://github.com/AkankshaSudhagoni/notify-myhabit/blob/main/Notify%20MyHabit.pptx) </br>
+• You can find our [**Presentation Slides**](https://github.com/AkankshaSudhagoni/notify-myhabit/blob/main/Notify%20MyHabit.pptx) for Notify MyHabit here. </br>
 
 
 ## Links 
