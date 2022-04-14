@@ -73,5 +73,5 @@ The objective of our web application is to display the habit of the student on b
 • [You can find our **Wiki** for Notify MyHabit here.](https://github.com/AkankshaSudhagoni/Notify-MyHabit/wiki)</br>
 • [You can find our **Project board** for Notify MyHabit here](https://github.com/AkankshaSudhagoni/Notify-MyHabit/projects/2) </br>
 • [You can find our **Final Client acceptance** for Notify MyHabit here](https://github.com/RohitChandupatla/Topic-of-the-Day/blob/main/FinalClient_Acceptance.md)<br>
-• You can find our **QA peer review**
+• [You can find our **QA peer review** for Featured Location](https://github.com/AkankshaSudhagoni/notify-myhabit/wiki/Artifacts)
 
