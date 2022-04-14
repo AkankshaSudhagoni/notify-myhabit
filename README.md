@@ -32,7 +32,7 @@ The objective of our web application is to display the habit of the student on b
 
 ## Deployment
 
-• We made it easier for the application to be **deployed** automatically When you make any **changes** to the repository, the **build** will start **deploying** to Heroku **automatically**. </br>
+• We made it easier for the application to be **deployed** automatically When you make any **changes** to the repository, the **build** will start **deploying** to [Heroku](https://dashboard.heroku.com/apps/notify-myhabit) **automatically**. </br>
 • If you make any changes to a repo and they **aren't** automatically deployed, try **manually** deploying them to see if they show up in the app.
 
 ## Test
