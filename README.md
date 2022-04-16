@@ -57,13 +57,16 @@ The objective of our web application is to display the habit of the student on b
 
 ## Documentation Sites
  
-• **[Swagger](https://akankshasudhagoni.github.io/swagger-notifymyapp/)** </br>
-• **[User/Contributor Guide](https://rohitchandupatla.github.io/notify-myhabit-doc/)** </br>
-• **[Docfx](https://rohitchandupatla.github.io/notify-myhabit-docfx/)** </br>
+• You can find our **[Swagger](https://akankshasudhagoni.github.io/swagger-notifymyapp/)**  for Notify MyHabit here. </br>
+• You can find our **[User/Contributor Guide](https://rohitchandupatla.github.io/notify-myhabit-doc/)**  for Notify MyHabit here. </br>
+• You can find our **[Docfx](https://rohitchandupatla.github.io/notify-myhabit-docfx/)**  for Notify MyHabit here. </br>
 
 ## Presentation Slides
 
 • You can find our [**Presentation Slides**](https://github.com/AkankshaSudhagoni/notify-myhabit/blob/main/Notify%20MyHabit.pptx) for Notify MyHabit here. </br>
+
+## QA peer review
+• You can find our [**QA peer review**](https://github.com/AkankshaSudhagoni/notify-myhabit/wiki/Artifacts) for Featured Location.
 
 
 ## Links 
@@ -73,5 +76,4 @@ The objective of our web application is to display the habit of the student on b
 • [You can find our **Wiki** for Notify MyHabit here.](https://github.com/AkankshaSudhagoni/Notify-MyHabit/wiki)</br>
 • [You can find our **Project board** for Notify MyHabit here](https://github.com/AkankshaSudhagoni/Notify-MyHabit/projects/2) </br>
 • [You can find our **Final Client acceptance** for Notify MyHabit here](https://github.com/RohitChandupatla/Topic-of-the-Day/blob/main/FinalClient_Acceptance.md)<br>
-• [You can find our **QA peer review** for Featured Location](https://github.com/AkankshaSudhagoni/notify-myhabit/wiki/Artifacts)
 
